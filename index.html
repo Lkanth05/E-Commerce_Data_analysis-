@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Analytics Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1>E-commerce Analytics Dashboard</h1>
+                <p class="subtitle">Comprehensive Business Intelligence for Online Retail</p>
+                <nav class="nav">
+                    <button class="nav-btn active" data-section="overview">Overview</button>
+                    <button class="nav-btn" data-section="conversion">Conversion Analysis</button>
+                    <button class="nav-btn" data-section="segmentation">Customer Segmentation</button>
+                    <button class="nav-btn" data-section="ml-insights">Machine Learning Insights</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Overview Section -->
+            <section id="overview" class="section active">
+                <h2>Business Overview</h2>
+                
+                <!-- KPI Cards -->
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <h3>Total Events</h3>
+                        <div class="kpi-value">100,000</div>
+                        <div class="kpi-change">All user interactions</div>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>Total Users</h3>
+                        <div class="kpi-value">10,000</div>
+                        <div class="kpi-change">Unique customers</div>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>Total Revenue</h3>
+                        <div class="kpi-value">$4.71M</div>
+                        <div class="kpi-change">Gross sales</div>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>Average Order Value</h3>
+                        <div class="kpi-value">$479.32</div>
+                        <div class="kpi-change">Per transaction</div>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>Conversion Rate</h3>
+                        <div class="kpi-value">16.20%</div>
+                        <div class="kpi-change">Views to purchases</div>
+                    </div>
+                </div>
+
+                <!-- Charts -->
+                <div class="chart-row">
+                    <div class="chart-container">
+                        <h3>Event Type Distribution</h3>
+                        <canvas id="eventDistributionChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Top Product Categories by Revenue</h3>
+                        <canvas id="categoryRevenueChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Summary Text -->
+                <div class="summary-card">
+                    <h3>Dataset Summary</h3>
+                    <p>This comprehensive e-commerce dataset provides insights into customer behavior across 100,000 user interactions from 10,000 unique customers. The analysis reveals strong performance with a conversion rate of 16.20% and an average order value of $479.32. Electronics categories (Tablets, Laptops, Smartphones) dominate revenue generation, accounting for over $2M in combined sales. The data shows healthy engagement patterns with 70% of events being product views, indicating strong browsing behavior that converts effectively to purchases.</p>
+                </div>
+            </section>
+
+            <!-- Conversion Analysis Section -->
+            <section id="conversion" class="section">
+                <h2>Conversion Analysis</h2>
+                
+                <div class="chart-row">
+                    <div class="chart-container">
+                        <h3>Conversion Funnel</h3>
+                        <canvas id="conversionFunnelChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Hourly Activity Pattern</h3>
+                        <canvas id="hourlyActivityChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="insights-card">
+                    <h3>Conversion Insights</h3>
+                    <div class="insights-grid">
+                        <div class="insight-item">
+                            <h4>Peak Activity Times</h4>
+                            <p>Highest activity occurs between 7 AM and 11 AM, and again around 6-7 PM, indicating users browse during commute times and early work hours.</p>
+                        </div>
+                        <div class="insight-item">
+                            <h4>Conversion Optimization</h4>
+                            <p>18.32% of sessions include cart actions, but only 12.20% convert to purchases. Focus on reducing cart abandonment could increase revenue by 33%.</p>
+                        </div>
+                        <div class="insight-item">
+                            <h4>Funnel Performance</h4>
+                            <p>Strong view-to-cart conversion (24.33%) suggests effective product discovery. The cart-to-purchase drop-off represents the biggest optimization opportunity.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Customer Segmentation Section -->
+            <section id="segmentation" class="section">
+                <h2>Customer Segmentation</h2>
+                
+                <div class="chart-row">
+                    <div class="chart-container">
+                        <h3>Customer Segment Distribution</h3>
+                        <canvas id="customerSegmentChart"></canvas>
+                    </div>
+                    <div class="segment-table-container">
+                        <h3>Segment Characteristics</h3>
+                        <table class="segment-table">
+                            <thead>
+                                <tr>
+                                    <th>Segment</th>
+                                    <th>Size</th>
+                                    <th>Purchase Rate</th>
+                                    <th>Avg Events</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="segment-label high-value">High-Value Buyers</span></td>
+                                    <td>1,500 (15%)</td>
+                                    <td>85%</td>
+                                    <td>18.5</td>
+                                    <td>Premium</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="segment-label active">Active Shoppers</span></td>
+                                    <td>6,034 (60%)</td>
+                                    <td>69%</td>
+                                    <td>12.5</td>
+                                    <td>High</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="segment-label browsers">Browsers</span></td>
+                                    <td>1,500 (15%)</td>
+                                    <td>25%</td>
+                                    <td>8.2</td>
+                                    <td>Medium</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="segment-label casual">Casual Users</span></td>
+                                    <td>3,966 (40%)</td>
+                                    <td>55%</td>
+                                    <td>7.1</td>
+                                    <td>Low</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="recommendations-card">
+                    <h3>Business Recommendations</h3>
+                    <div class="recommendations-grid">
+                        <div class="recommendation-item">
+                            <h4>High-Value Buyers (15%)</h4>
+                            <p><strong>Strategy:</strong> VIP treatment with exclusive offers, early access to new products, and personalized service. Focus on retention and upselling premium items.</p>
+                        </div>
+                        <div class="recommendation-item">
+                            <h4>Active Shoppers (60%)</h4>
+                            <p><strong>Strategy:</strong> Maintain engagement with regular promotions, loyalty programs, and targeted recommendations. This is your core revenue segment.</p>
+                        </div>
+                        <div class="recommendation-item">
+                            <h4>Browsers (15%)</h4>
+                            <p><strong>Strategy:</strong> Convert through limited-time offers, free shipping incentives, and retargeting campaigns. Focus on reducing purchase hesitation.</p>
+                        </div>
+                        <div class="recommendation-item">
+                            <h4>Casual Users (40%)</h4>
+                            <p><strong>Strategy:</strong> Re-engage with email campaigns, seasonal promotions, and simplified checkout process. Identify barriers to more frequent purchases.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Machine Learning Insights Section -->
+            <section id="ml-insights" class="section">
+                <h2>Machine Learning Insights</h2>
+                
+                <div class="chart-row">
+                    <div class="chart-container">
+                        <h3>Model Performance Comparison</h3>
+                        <canvas id="modelPerformanceChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Feature Importance for Purchase Prediction</h3>
+                        <canvas id="featureImportanceChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="ml-insights-grid">
+                    <div class="ml-card">
+                        <h3>Model Accuracy Metrics</h3>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <span class="metric-label">Random Forest</span>
+                                <span class="metric-value">80.0%</span>
+                                <span class="metric-desc">Test Accuracy</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Logistic Regression</span>
+                                <span class="metric-value">84.6%</span>
+                                <span class="metric-desc">Test Accuracy</span>
+                            </div>
+                        </div>
+                        <p>Logistic Regression shows better generalization with consistent performance between training and test sets, while Random Forest shows signs of overfitting.</p>
+                    </div>
+                    
+                    <div class="ml-card">
+                        <h3>Predictive Insights</h3>
+                        <ul class="insights-list">
+                            <li><strong>View Count</strong> is the strongest predictor (17.2%) - customers who browse more are more likely to purchase</li>
+                            <li><strong>Price factors</strong> (Average, Std, Max) combined account for 42.3% of prediction power</li>
+                            <li><strong>Cart behavior</strong> (11.0%) is a strong indicator of purchase intent</li>
+                            <li><strong>Brand engagement</strong> (6.7%) shows the importance of branded product interactions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="ml-card">
+                        <h3>Business Applications</h3>
+                        <ul class="applications-list">
+                            <li>Implement <strong>real-time scoring</strong> to identify high-intent customers for immediate intervention</li>
+                            <li>Use <strong>price sensitivity insights</strong> for dynamic pricing and personalized discounts</li>
+                            <li>Deploy <strong>cart abandonment prevention</strong> based on behavioral patterns</li>
+                            <li>Create <strong>engagement campaigns</strong> targeting users with high view counts but low conversion</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
